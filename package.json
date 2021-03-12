@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export -o docs",
+    "deploy": "yarn export && echo 'kps13.com' >> docs/CNAME && touch docs/.nojekyll && git checkout -- docs/CNAME docs/.nojekyll && git add ./docs && git commit -m \"chore(site): regen\" && git push origin main -f",
     "start": "next start"
   },
   "dependencies": {
