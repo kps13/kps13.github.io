@@ -5,10 +5,7 @@ import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    AOS.init({
-      once: false,
-      mirror: false,
-    });
+    AOS.init();
     window.addEventListener('touchmove', () => {
       AOS.refresh()
     }, false)
